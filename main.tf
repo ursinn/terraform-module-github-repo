@@ -36,16 +36,16 @@ resource "github_repository" "repo" {
 
 # Repo Branches
 resource "github_branch" "branch" {
-  for_each = var.branches
-  repository = each.key
-  branch = each.value.branch
+  for_each      = var.branches
+  repository    = each.key
+  branch        = each.value.branch
   source_branch = each.value.source_branch
-  source_sha = each.value.source_sha
+  source_sha    = each.value.source_sha
 }
 
 # Repo Default Branch
-resource "github_branch_default" "default"{
-  for_each = var.default_branches
+resource "github_branch_default" "default" {
+  for_each   = var.default_branches
   repository = each.key
   branch     = each.value.branch
 }

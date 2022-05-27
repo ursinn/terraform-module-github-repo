@@ -24,9 +24,9 @@ variable "repos" {
 
 variable "branches" {
   type = map(object({
-    branch = string
+    branch        = string
     source_branch = optional(string)
-    source_sha = optional(string)
+    source_sha    = optional(string)
   }))
 }
 
